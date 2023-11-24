@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <title>Home Page</title>
+</head>
+<body>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="login/">Login</a></li>
+    <li><a href="register/">Register</a></li>
+    <li>
+        <a href="">Department</a>
+        <ul class="dropdown">
+            <li>
+                <a href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+                <a href="https://en.wikipedia.org/wiki/Commerce">Commerce</a>
+                <a href="https://en.wikipedia.org/wiki/Biology_science">Biology Science</a>
+                <a href="https://en.wikipedia.org/wiki/Humanities">Humanities</a>
+                <a href="https://en.wikipedia.org/wiki/Art">Art</a>
+            </li>
+                    <!-- Add more departments as needed -->
+        </ul>
+    </li>
+    {% if user.is_authenticated %}
+    <li style="color:white;padding:10px 30px;">Hey {{user.username}}--></li>
+    <li><a href="logout" style="padding: 10px;">Logout</a></li>
+    {% endif %}
+</ul>
+<h2><u>School</u></h2>
+<h2><p style="padding:5px;">Education is a process of learning and growing as one gains understanding about the surrounding world. This is a lifelong process. It is, as John Dewey (1916) put it, a social process – 'a process of living and not a preparation for future living.</p></h2>
+<img src="https://thumbs.dreamstime.com/b/group-school-kids-teacher-classroom-education-elementary-learning-people-concept-sitting-listening-to-57820297.jpg"  style="width:28rem;height:18rem;padding:10px 500px;" >
+</body>
+</html>
